@@ -10,7 +10,7 @@ html {
 
 body {
     font-family: 'Helvetica Neue', Segoe UI, Tahoma, sans-serif;
-    background: #141414;
+    background: #000000;
     color: #fff;
     overflow-x: hidden;
 }
@@ -81,9 +81,8 @@ body {
 .hero-detail {
     display: none;
     position: relative;
-    height: 50vh;
-    min-height: 400px;
-    margin-bottom: 2rem;
+    height: 500px;
+    margin-bottom: 3rem;
     overflow: hidden;
 }
 
@@ -99,12 +98,13 @@ body {
     bottom: 0;
     width: 100%;
     height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-detail-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: none;
 }
 
 .hero-detail-gradient {
@@ -115,9 +115,9 @@ body {
     bottom: 0;
     background: linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.7) 50%,
-        rgba(0, 0, 0, 0) 100%
+        rgba(10, 10, 10, 0.95) 0%,
+        rgba(10, 10, 10, 0.85) 50%,
+        rgba(10, 10, 10, 0.6) 100%
     );
 }
 
@@ -186,6 +186,124 @@ body {
     background: rgba(255, 255, 255, 0.5);
 }
 
+/* Detail Modal */
+.detail-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    background: #000;
+}
+
+.detail-modal.active {
+    display: flex;
+}
+
+.detail-modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.detail-modal-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 10, 10, 0.95) 0%,
+        rgba(10, 10, 10, 0.8) 40%,
+        rgba(10, 10, 10, 0.3) 100%
+    );
+}
+
+.detail-modal-close {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-modal-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.detail-modal-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.detail-modal-info {
+    width: 50%;
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-modal-info h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.detail-modal-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.detail-modal-meta span {
+    font-size: 1rem;
+    color: #b3b3b3;
+}
+
+.detail-modal-info p {
+    font-size: 1.1rem;
+    color: #fff;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.detail-modal-actions {
+    display: flex;
+    gap: 1rem;
+}
+
 /* Container */
 .container {
     max-width: 100%;
@@ -220,10 +338,10 @@ body {
 
 .row-carousel {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
 }
 
 .row-carousel::-webkit-scrollbar {
@@ -245,20 +363,25 @@ body {
 
 /* Item Card */
 .item-card {
-    flex: 0 0 250px;
-    height: 140px;
-    border-radius: 4px;
-    overflow: hidden;
+    flex: 0 0 200px;
+    height: 320px;
+    border-radius: 8px;
+    overflow: visible;
     cursor: pointer;
     position: relative;
-    transition: all 0.2s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
     background: #2f2f2f;
+    z-index: 1;
 }
 
 .item-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.9);
+    flex: 0 0 400px;
+    height: 320px;
+    transform: scale(1);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    border: 2px solid #fff;
 }
 
 .item-card img {
@@ -479,8 +602,13 @@ body {
     }
 
     .item-card {
-        flex: 0 0 200px;
-        height: 115px;
+        flex: 0 0 160px;
+        height: 260px;
+    }
+
+    .item-card:hover {
+        flex: 0 0 320px;
+        height: 260px;
     }
 
     .modal-content {
@@ -512,8 +640,13 @@ body {
     }
 
     .item-card {
-        flex: 0 0 150px;
-        height: 85px;
+        flex: 0 0 120px;
+        height: 200px;
+    }
+
+    .item-card:hover {
+        flex: 0 0 240px;
+        height: 200px;
     }
 
     .row-title {

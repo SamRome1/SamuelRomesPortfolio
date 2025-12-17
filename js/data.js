@@ -1,6 +1,36 @@
 // Portfolio Data Structure
 const portfolioData = [
     {
+        id: 'experience',
+        title: 'Professional Experience',
+        items: [
+            {
+                title: 'Developer Relations Engineer',
+                category: 'Supabase',
+                description: 'Helping developers build with the best open-source backend🧩',
+                date: '09/25 - Present',
+                image: 'images/job.png',
+                link: '#'
+            },
+            {
+                title: 'Founder @ThePowerOfRome',
+                category: 'Personal Brand',
+                description: 'Developed and scaled an audience to 175K+ accross multiple platformsthrough iterative content optimization, leveraging platform analytics, A/B testing, and trend analysis.',
+                date: '06/22 - Present',
+                image: 'images/insta.png',
+                link: '#'
+            },
+            {
+                title: 'Software Engineer',
+                category: 'Freelance',
+                description: 'Built a variety of web applciations, mobile applications and websites for clients accross different industries.',
+                date: '',
+                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=Junior+Dev',
+                link: '#'
+            }
+        ]
+    },
+    {
         id: 'technical-content',
         title: 'Technical Content Creation',
         items: [
@@ -9,7 +39,7 @@ const portfolioData = [
                 category: 'Video Content',
                 description: 'A comprehensive tutorial series covering web development best practices, JavaScript advanced concepts, and modern frameworks.',
                 date: '2024',
-                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=YouTube+Tutorials',
+                image: 'images/antigravity.png',
                 link: '#'
             },
             {
@@ -17,7 +47,7 @@ const portfolioData = [
                 category: 'Written Content',
                 description: 'In-depth technical articles about software architecture, performance optimization, and design patterns.',
                 date: '2024',
-                image: 'https://via.placeholder.com/280x160/764ba2/ffffff?text=Blog+Posts',
+                image: 'images/atlas.png',
                 link: '#'
             },
             {
@@ -25,7 +55,7 @@ const portfolioData = [
                 category: 'Community',
                 description: 'Active contributor to popular open-source projects with focus on code quality and documentation.',
                 date: '2023-2024',
-                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=Open+Source',
+                image: 'images/codewiki.png',
                 link: '#'
             },
             {
@@ -33,11 +63,50 @@ const portfolioData = [
                 category: 'Audio Content',
                 description: 'Guest appearances and hosted episodes discussing trends in software development.',
                 date: '2024',
-                image: 'https://via.placeholder.com/280x160/764ba2/ffffff?text=Podcasts',
+                image: 'images/rls.png',
+                link: '#'
+            },
+            {
+                title: 'Technical Podcasts',
+                category: 'Audio Content',
+                description: 'Guest appearances and hosted episodes discussing trends in software development.',
+                date: '2024',
+                image: 'images/snapglasses.png',
                 link: '#'
             }
         ]
     },
+    {
+        id: 'certifications',
+        title: 'Certifications & Awards',
+        items: [
+            {
+                title: 'AWS Certified Solutions Architect',
+                category: 'Certification',
+                description: 'Professional-level certification validating expertise in designing scalable, reliable, and secure AWS infrastructure.',
+                date: '2023',
+                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=AWS+Cert',
+                link: '#'
+            },
+            {
+                title: 'Google Cloud Associate Engineer',
+                category: 'Certification',
+                description: 'Certified in Google Cloud Platform with expertise in deploying and managing cloud applications.',
+                date: '2023',
+                image: 'https://via.placeholder.com/280x160/764ba2/ffffff?text=GCP+Cert',
+                link: '#'
+            },
+            {
+                title: 'Best Developer Award',
+                category: 'Recognition',
+                description: 'Awarded as the best developer of the year for exceptional contributions and innovation.',
+                date: '2023',
+                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=Award',
+                link: '#'
+            }
+        ]
+    },
+
     {
         id: 'skills',
         title: 'Technical Skills',
@@ -130,64 +199,5 @@ const portfolioData = [
             }
         ]
     },
-    {
-        id: 'experience',
-        title: 'Professional Experience',
-        items: [
-            {
-                title: 'Senior Developer',
-                category: 'TechCorp Inc.',
-                description: 'Led development of microservices architecture serving 1M+ users. Mentored junior developers and established development best practices.',
-                date: '2022-2024',
-                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=Senior+Dev',
-                link: '#'
-            },
-            {
-                title: 'Full Stack Engineer',
-                category: 'StartUp XYZ',
-                description: 'Developed and deployed multiple production applications from scratch. Implemented CI/CD pipelines and improved system performance by 40%.',
-                date: '2020-2022',
-                image: 'https://via.placeholder.com/280x160/764ba2/ffffff?text=Full+Stack',
-                link: '#'
-            },
-            {
-                title: 'Junior Developer',
-                category: 'Digital Agency',
-                description: 'Built responsive web applications for clients, maintained legacy code, and contributed to frontend optimization initiatives.',
-                date: '2019-2020',
-                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=Junior+Dev',
-                link: '#'
-            }
-        ]
-    },
-    {
-        id: 'certifications',
-        title: 'Certifications & Awards',
-        items: [
-            {
-                title: 'AWS Certified Solutions Architect',
-                category: 'Certification',
-                description: 'Professional-level certification validating expertise in designing scalable, reliable, and secure AWS infrastructure.',
-                date: '2023',
-                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=AWS+Cert',
-                link: '#'
-            },
-            {
-                title: 'Google Cloud Associate Engineer',
-                category: 'Certification',
-                description: 'Certified in Google Cloud Platform with expertise in deploying and managing cloud applications.',
-                date: '2023',
-                image: 'https://via.placeholder.com/280x160/764ba2/ffffff?text=GCP+Cert',
-                link: '#'
-            },
-            {
-                title: 'Best Developer Award',
-                category: 'Recognition',
-                description: 'Awarded as the best developer of the year for exceptional contributions and innovation.',
-                date: '2023',
-                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=Award',
-                link: '#'
-            }
-        ]
-    }
+    
 ];

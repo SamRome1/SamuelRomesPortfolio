@@ -2,7 +2,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contentRows = document.getElementById('contentRows');
     const heroDetail = document.getElementById('heroDetail');
-    const heroDetailClose = document.getElementById('heroDetailClose');
+    const detailModal = document.getElementById('detailModal');
+    const detailModalClose = document.getElementById('detailModalClose');
 
     // Render all rows
     portfolioData.forEach(row => {
@@ -16,12 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
         openHeroDetail(featuredItem);
     }
 
-    // Hero detail close button
-    heroDetailClose.addEventListener('click', closeHeroDetail);
+    // Detail modal close button
+    detailModalClose.addEventListener('click', closeDetailModal);
 
-    // Close hero detail when pressing Escape
+    // Close detail modal when clicking outside
+    detailModal.addEventListener('click', (e) => {
+        if (e.target === detailModal) closeDetailModal();
+    });
+
+    // Close detail modal when pressing Escape
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeHeroDetail();
+        if (e.key === 'Escape') closeDetailModal();
     });
 });
 
@@ -81,7 +87,7 @@ function createItemCard(item, rowId) {
     overlay.appendChild(itemCategory);
     card.appendChild(overlay);
 
-    card.addEventListener('click', () => openHeroDetail(item));
+    card.addEventListener('click', () => openDetailModal(item));
 
     return card;
 }
@@ -95,8 +101,12 @@ function createPlaceholder(text) {
 
 function openHeroDetail(item) {
     const heroDetail = document.getElementById('heroDetail');
+    const heroDetailBackground = document.querySelector('.hero-detail-background');
     
-    document.getElementById('heroDetailImage').src = item.image || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="400"%3E%3Crect fill="%23333" width="800" height="400"/%3E%3C/svg%3E';
+    // Set background image
+    const imageUrl = item.image || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="400"%3E%3Crect fill="%23333" width="800" height="400"/%3E%3C/svg%3E';
+    heroDetailBackground.style.backgroundImage = `url('${imageUrl}')`;
+    
     document.getElementById('heroDetailTitle').textContent = item.title;
     document.getElementById('heroDetailDescription').textContent = item.description;
     document.getElementById('heroDetailCategory').textContent = item.category || 'Portfolio Item';
@@ -117,4 +127,33 @@ function openHeroDetail(item) {
 function closeHeroDetail() {
     const heroDetail = document.getElementById('heroDetail');
     heroDetail.classList.remove('active');
+}
+
+function openDetailModal(item) {
+    const detailModal = document.getElementById('detailModal');
+    const detailModalBackground = document.getElementById('detailModalBackground');
+    
+    // Set background image
+    const imageUrl = item.image || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23333" width="800" height="600"/%3E%3C/svg%3E';
+    detailModalBackground.style.backgroundImage = `url('${imageUrl}')`;
+    
+    document.getElementById('detailModalTitle').textContent = item.title;
+    document.getElementById('detailModalDescription').textContent = item.description;
+    document.getElementById('detailModalCategory').textContent = item.category || 'Portfolio Item';
+    document.getElementById('detailModalDate').textContent = item.date || '';
+    
+    const link = document.getElementById('detailModalLink');
+    if (item.link) {
+        link.href = item.link;
+        link.style.display = 'inline-block';
+    } else {
+        link.style.display = 'none';
+    }
+
+    detailModal.classList.add('active');
+}
+
+function closeDetailModal() {
+    const detailModal = document.getElementById('detailModal');
+    detailModal.classList.remove('active');
 }
