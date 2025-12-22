@@ -9,7 +9,7 @@ const portfolioData = [
                 category: 'Supabase',
                 description: 'Helping developers build with the best open-source backend🧩',
                 date: '09/25 - Present',
-                image: 'images/job.png',
+                image: 'images/supabasePort.webp',
                 link: '#'
             },
             {
@@ -25,22 +25,48 @@ const portfolioData = [
                 category: 'Freelance',
                 description: 'Built a variety of web applciations, mobile applications and websites for clients accross different industries.',
                 date: '',
-                image: 'https://via.placeholder.com/280x160/667eea/ffffff?text=Junior+Dev',
+                image: 'images/freelance.jpeg',
                 link: '#'
-            }
+            },
+             {
+                title: 'AI Integrations Specialist',
+                category: 'Contract',
+                description: 'Designed and deployed AI solutions using OpenAI’s GPT-4o to automate and streamline operations across healthcare, content, and service-based businesses. Built custom prompt workflows, summarization tools, and SOP automation systems tailored to each organization’s workflows and compliance needs.',
+                date: '',
+                image: 'images/AIintergration.jpeg',
+                link: '#'
+            },
+            {
+                title: 'Algorithmic Systems & Data Pipeline Engineer',
+                category: 'Internship',
+                description: 'Designed and analyzed algorithmic systems and data pipelines for Targeted Social Media Algorithm, quantifying confirmation bias within social media recommendation engines',
+                date: '',
+                image: 'images/tsma.jpeg',
+                link: '#'
+            },
         ]
     },
     {
         id: 'technical-content',
         title: 'Technical Content Creation',
         items: [
+             {
+                title: 'Supabase YouTube - CodeWiki',
+                category: 'Community',
+                description: 'Active contributor to popular open-source projects with focus on code quality and documentation.',
+                date: '2023-2024',
+                image: 'images/codewiki.png',
+                video: 'videos/sam-codewiki(1).mp4',
+                link: 'https://youtube.com/shorts/7HmWU_cEZeQ'
+            },
             {
-                title: 'YouTube Tutorial Series',
+                title: 'YouTube Googles CodeWiki',
                 category: 'Video Content',
                 description: 'A comprehensive tutorial series covering web development best practices, JavaScript advanced concepts, and modern frameworks.',
                 date: '2024',
                 image: 'images/antigravity.png',
-                link: '#'
+                video: 'https://youtube.com/shorts/x0Y0CxJclmY',
+                link: 'https://youtube.com/shorts/x0Y0CxJclmY'
             },
             {
                 title: 'Blog Posts & Articles',
@@ -48,15 +74,8 @@ const portfolioData = [
                 description: 'In-depth technical articles about software architecture, performance optimization, and design patterns.',
                 date: '2024',
                 image: 'images/atlas.png',
-                link: '#'
-            },
-            {
-                title: 'Open Source Contributions',
-                category: 'Community',
-                description: 'Active contributor to popular open-source projects with focus on code quality and documentation.',
-                date: '2023-2024',
-                image: 'images/codewiki.png',
-                link: '#'
+                video: 'https://youtube.com/shorts/cNSi0tMJxeI',
+                link: 'https://youtube.com/shorts/cNSi0tMJxeI'
             },
             {
                 title: 'Technical Podcasts',
